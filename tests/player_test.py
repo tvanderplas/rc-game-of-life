@@ -41,8 +41,13 @@ class Test_Neighbors(unittest.TestCase):
 
 
 class Test_Status(unittest.TestCase):
-    pass
 
+    def test_status_is_alive_when_it_has_3_neighbors(self):
+        scenario = Life(3, 3)
+        scenario.board[0][0] = '#'
+        scenario.board[1][0] = '#'
+        scenario.board[0][1] = '#'
+        self.assertEqual(scenario.status(1, 1), '#')
 
 
 if __name__ == '__main__':
